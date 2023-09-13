@@ -4,7 +4,11 @@ import { Ticket } from "@/types/ticket";
 type Props = {};
 
 async function getTickets(): Promise<Ticket[]> {
-  const response = await fetch("http://localhost:4000/tickets");
+  const response = await fetch("http://localhost:4000/tickets", {
+    next: {
+      revalidate: 600,
+    },
+  });
   return response.json();
 }
 
