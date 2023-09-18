@@ -6,7 +6,7 @@ async function getTickets(): Promise<Ticket[]> {
   await new Promise(resolve => setTimeout(resolve, 3000))
   const response = await fetch("http://localhost:4000/tickets", {
     next: {
-      revalidate: 600,
+      revalidate: 0,
     },
   });
   return response.json();

@@ -29,8 +29,8 @@ const CreateForm = () => {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        body: JSON.stringify(ticket),
       },
+      body: JSON.stringify(ticket),
     });
 
     if (response.status === 201) {
